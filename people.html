@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>People - Ella's Art</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px; /* Increased padding for more spacing */
+            background-color: transparent; /* Set the background color to transparent */
+        }
+        .back-button {
+            color: pink;
+            font-size: 36px; /* Increased font size for a larger arrow */
+            font-weight: bold;
+            margin-right: 60px; /* Increased margin to move the arrow farther away */
+            cursor: pointer;
+        }
+        .title {
+            display: none; /* Hide the "People" text next to the arrow */
+        }
+        .page-title {
+            color: pink;
+            font-size: 36px;
+            margin: 20px 0;
+        }
+        .button-container {
+            display: flex;
+            margin-left: 40px; /* Increased margin to space out the buttons more */
+        }
+        .category-button {
+            color: pink;
+            margin-left: 30px; /* Adjusted margin to space out the buttons more */
+            font-size: 20px; /* Adjusted font size for better visibility */
+            cursor: pointer;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            justify-items: center;
+            max-width: 60%;
+            margin: auto;
+        }
+        .image {
+            width: 200px; /* Set a fixed width for all images */
+            height: 200px; /* Set a fixed height for all images, making them square */
+            object-fit: cover; /* Ensures the entire image is visible, even if it's cropped */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="button-container">
+            <a href="home.html" class="back-button">&#8592;</a>
+        </div>
+        <div class="button-container">
+            <a href="pets.html" class="category-button">Pets</a>
+            <a href="places.html" class="category-button">Places</a>
+        </div>
+    </header>
+    <h1 class="page-title">People</h1>
+    <div class="image-container">
+        <!-- Your images go here -->
+        <img src="Images/Face5.jpeg" alt="Place 1" class="image">
+        <img src="Images/face3.jpeg" alt="Place 3" class="image">
+        <img src="Images/face6.jpeg" alt="Place 4" class="image">
+        <img src="Images/face1.JPG" alt="Place 1" class="image">
+        <img src="Images/face2.JPG" alt="Place 2" class="image">
+        <img src="Images/Face4.jpeg" alt="Place 1" class="image">
+        <img src="Images/face7.jpeg" alt "Place 5" class="image">
+        <img src="Images/face8.jpeg" alt="Place 6" class="image">
+        <img src="Images/face9.jpeg" alt="Place 7" class="image">
+        <img src="Images/face10.jpeg" alt="Place 8" class="image">
+        <img src="Images/face11.jpeg" alt="Place 9" class="image">
+        <img src="Images/face12.JPG" alt="Place 10" class="image">
+        <img src="Images/face13.jpg" alt="Place 11" class="image">
+        <img src="Images/face14.jpeg" alt="Place 11" class="image">
+    </div>
+</body>
+</html>

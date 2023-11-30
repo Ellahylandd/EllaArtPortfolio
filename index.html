@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ella's Art</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Background color for the home page */
+        }
+
+        h1 {
+            color: pink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="ellas-art">Ella's Art</h1>
+
+    <script>
+        document.getElementById('ellas-art').addEventListener('click', function() {
+            // Redirect to the portfolio page when clicked
+            window.location.href = 'bubbles.html';
+        });
+    </script>
+</body>
+</html>
+

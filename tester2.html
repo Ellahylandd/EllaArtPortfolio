@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #0a0a0a;
+    }
+
+    .art {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      border-radius: 50%;
+      animation: moveArt 5s infinite alternate;
+    }
+
+    @keyframes moveArt {
+      0% {
+        top: 50px;
+        left: 50px;
+      }
+      100% {
+        top: 200px;
+        left: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="art"></div>
+
+</body>
+</html>

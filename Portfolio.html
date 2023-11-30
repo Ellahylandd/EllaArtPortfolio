@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: pink; /* Initial background color */
+        }
+        canvas {
+            display: block;
+        }
+        button {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #006400; /* Dark green color for the button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <button id="portfolioButton">Portfolio</button>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const balls = [];
+        let timeElapsed = 0;
+
+        function createRandomBall() {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            const radius = Math.random() * 5 + 1; // Start small
+            const dx = (Math.random() - 0.5) * 2;
+            const dy = (Math.random() - 0.5) * 2;
+            const color = getRandomShadeOfPink();
+            return { x, y, radius, dx, dy, color };
+        }
+
+        function getRandomShadeOfPink() {
+            const hue = Math.random() * 360;
+            const saturation = Math.random() * 50 + 50;
+            const lightness = Math.random() * 30 + 70;
+            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+        }
+
+        function drawBall(x, y, radius, color) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function update() {
+            for (const ball of balls) {
+                // Move the ball
+                ball.x += ball.dx;
+                ball.y += ball.dy;
+
+                // Check for collisions with the canvas boundaries
+                if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
+                    ball.dx = -ball.dx;
+                }
+                if (ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
+                    ball.dy = -ball.dy;
+                }
+
+                // Increase the size of the balls gradually
+                if (timeElapsed < 7) {
+                    ball.radius += 0.1;
+                }
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (const ball of balls) {
+                drawBall(ball.x, ball.y, ball.radius, ball.color);
+            }
+        }
+
+        function gameLoop() {
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+            timeElapsed += 1 / 40; // Increment time elapsed (assuming 40 FPS)
+
+            if (timeElapsed >= 7) {
+                // Show the "Portfolio" button and change the background color
+                document.getElementById('portfolioButton').style.display = 'block';
+                document.body.style.backgroundColor = 'lightpink';
+            }
+        }
+
+        // Create a large number of balls
+        for (let i = 0; i < 1000; i++) {
+            balls.push(createRandomBall());
+        }
+
+        gameLoop();
+
+        // Redirect to the artwork page when the button is clicked
+        document.getElementById('portfolioButton').addEventListener('click', function() {
+            window.location.href = 'home.html';
+        });
+    </script>
+</body>
+</html>

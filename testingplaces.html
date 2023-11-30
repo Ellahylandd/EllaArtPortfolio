@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places - Ella's Art</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* White background color */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-size: 200% 200%;
+            animation: shimmer 2s infinite; /* Shimmer animation */
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 200% 0%;
+            }
+        }
+
+        .letters-container {
+            display: flex;
+        }
+        .letter {
+            font-size: 120px;
+            font-weight: bold;
+            color: hotpink; /* Set the color to hot pink */
+            opacity: 0;
+            transform: translateX(200%);
+            animation: slideIn 1s forwards;
+            animation-delay: calc(var(--delay) * 0.2s);
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .paragraph-container {
+            position: relative;
+            margin-top: 20px;
+            width: 80%; /* Adjust the width as needed */
+        }
+
+        .paragraph {
+            font-size: 18px;
+            text-align: center;
+            margin: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 4s; /* Delay the paragraph animation */
+            color: hotpink; /* Set the color to hot pink */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Add the following styles for the transition after the letters */
+        .transition {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffb6c1; /* Light pink background color */
+            height: 100vh;
+            transition: background-color 1s, transform 1s;
+            transform-origin: center bottom;
+        }
+
+        .transition .letters-container {
+            font-size: 60px; /* Smaller font size for "Places" */
+        }
+    </style>
+</head>
+<body>
+    <div class="letters-container">
+        <div class="letter" style="--delay: 1;">P</div>
+        <div class="letter" style="--delay: 2;">L</div>
+        <div class="letter" style="--delay: 3;">A</div>
+        <div class="letter" style="--delay: 4;">C</div>
+        <div class="letter" style="--delay: 5;">E</div>
+        <div class="letter" style="--delay: 6;">S</div>
+    </div>
+    <div class="transition">
+        <div class="paragraph-container">
+            <div class="paragraph">
+                <p>Ella's love for Whistler Mountain has inspired many breathtaking paintings and works of art. She takes joy in creating landscape pieces that range from majestic mountains to scenic European vistas, and even places from her vivid imagination. You can always catch her in the act of creating something nature-inspired, bursting with color and radiance.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

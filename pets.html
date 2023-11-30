@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pets - Ella's Art</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px; /* Increased padding for more spacing */
+            background-color: transparent; /* Set the background color to transparent */
+        }
+        .back-button {
+            color: pink;
+            font-size: 36px; /* Increased font size for a larger arrow */
+            font-weight: bold;
+            margin-right: 60px; /* Increased margin to move the arrow farther away */
+            cursor: pointer;
+        }
+        .title {
+            display: none; /* Hide the "Pets" text next to the arrow */
+        }
+        .page-title {
+            color: pink;
+            font-size: 36px;
+            margin: 20px 0;
+        }
+        .button-container {
+            display: flex;
+            margin-left: 40px; /* Increased margin to space out the buttons more */
+        }
+        .category-button {
+            color: pink;
+            margin-left: 30px; /* Adjusted margin to space out the buttons more */
+            font-size: 20px; /* Adjusted font size for better visibility */
+            cursor: pointer;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            justify-items: center;
+            max-width: 60%;
+            margin: auto;
+        }
+        .image {
+            width: 200px; /* Set a fixed width for all images */
+            height: 200px; /* Set a fixed height for all images, making them square */
+            object-fit: cover; /* Ensures the entire image is visible, even if it's cropped */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="button-container">
+            <a href="home.html" class="back-button">&#8592;</a>
+        </div>
+        <div class="button-container">
+            <a href="places.html" class="category-button">Places</a>
+            <a href="people.html" class="category-button">People</a>
+        </div>
+    </header>
+    <h1 class="page-title">Pets</h1>
+    <div class="image-container">
+        <!-- Your images go here -->
+        <img src="Images/pet9.jpg" alt="Pet1 1" class="image">
+        <img src="Images/Pet2.jpg" alt="pet 2" class="image">
+        <img src="Images/pet3.jpg" alt="pet 3" class="image">
+        <img src="Images/pet4.jpg" alt="pet 4" class="image">
+        <img src="Images/pet5.jpg" alt "Pet 5" class="image">
+        <img src="Images/pet 6.jpg" alt="pet 6" class="image">
+        <img src="Images/pet7.jpg" alt="pet 7" class="image">
+        <img src="Images/pet8.jpg" alt="pet 8" class="image">
+        <img src="Images/pet1.jpg" alt="pet 9" class="image">
+        <img src="Images/pet10.jpg" alt="pet 10" class="image">
+    </div>
+</body>
+</html>
